@@ -25,7 +25,7 @@ There are 2 ways to install the theme.
 4. Activate the Theme in the Theme dashboard
 
 
-Setup theme
+Theme Setup
 ------------
 
 After the theme is activated you have to setup the "Home page" and "Menu"
@@ -35,7 +35,34 @@ Now the theme after activation creates a page called "Home page " with the slug 
 Then it sets a static page in the theme settings using this page.
 So you dont need to worry about creating pages and setting up the theme.
 
-You need to add data to your "Home Page"
+Home page setup
+------------
+The Home page is made of 4 customizable sections, each section requires some input from the admin in order to show a nice Home page.
 
+**Home page banner section :**
+Banner image:
+
+There is some recommended format for the image size , but even if you add a image that doesnt fit this recommendations the theme will auto resize the image keeping its proportions.
+
+Recommended image size : 
+  width = 1920 px
+  height = 490 px
+
+Banner Headline :
+The headline is build up from 3 fields , but only the firs one is required (*)
+
+1st Word (*) 
+2nd Word
+3rd Word 
+
+Banner Description :
+Here you can put some content in to your banner using a standard WYSIWYG editor
+
+Banner Button :
+The banner buttons consisnts of 2 fields, both are optional.
+To display the button both should be filled.
+
+Button text - The content of the button
+Button url - The URL where the user will be directed if he clicks the button, can be any url
 
 
