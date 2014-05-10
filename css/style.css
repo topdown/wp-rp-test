@@ -1,0 +1,260 @@
+/* CSS Document */
+/*-------------------------------------------------*/
+/*--- Font Face Including ---*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+/*--- Font Family :: Open Sans :: Regular ---*/
+/*-------------------------------------------------*/
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/opensans-regular.eot');
+    src: url('../fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular.woff') format('woff'),
+         url('../fonts/opensans-regular.ttf') format('truetype'),
+         url('../fonts/opensans-regular.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-------------------------------------------------*/
+/*--- Font Family :: Open Sans :: Italic ---*/
+/*-------------------------------------------------*/
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('../fonts/opensans-italic.eot');
+    src: url('../fonts/opensans-italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-italic.woff') format('woff'),
+         url('../fonts/opensans-italic.ttf') format('truetype'),
+         url('../fonts/opensans-italic.svg#OpenSansItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-------------------------------------------------*/
+/*--- Font Family :: Open Sans :: Semibold ---*/
+/*-------------------------------------------------*/
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('../fonts/opensans-semibold.eot');
+    src: url('../fonts/opensans-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibold.woff') format('woff'),
+         url('../fonts/opensans-semibold.ttf') format('truetype'),
+         url('../fonts/opensans-semibold.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-------------------------------------------------*/
+/*--- Font Family :: Open Sans :: Semibold Italic ---*/
+/*-------------------------------------------------*/
+@font-face {
+    font-family: 'OpenSansSemiboldItalic';
+    src: url('../fonts/opensans-semibolditalic.eot');
+    src: url('../fonts/opensans-semibolditalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibolditalic.woff') format('woff'),
+         url('../fonts/opensans-semibolditalic.ttf') format('truetype'),
+         url('../fonts/opensans-semibolditalic.svg#OpenSansSemiboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*-------------------------------------------------*/
+/*--- Custom Reset Styles ---*/
+/*-------------------------------------------------*/
+body, html { margin: 0; padding: 0; outline: none; min-width: 1002px; }
+body { color: #555; font: 14px/16px OpenSansRegular, Helvetica, Arial,sans-serif; }
+h1, h2, h3, h4 ,h5, h6 { font-weight: normal; padding: 0; margin: 0; }
+p, img { margin: 0; padding: 0; }
+h1, h2, h3 { margin: 0; padding: 0; }
+a img { border: 0; display: block; outline: none; }
+a:hover, a:focus { text-decoration: none; outline: none; }
+header, hgroup, nav, aside, section, article, footer { display: block; margin: 0; padding: 0; outline: none; }
+/*-------------------------------------------------*/
+/*--- Lists Styles Global Reset ---*/
+/*-------------------------------------------------*/
+.main-menu ul, ul.social-networks, ul.footer-info-menu, ul.sidebar-menu { margin: 0; padding: 0; list-style: none; }
+/*-------------------------------------------------*/
+/*--- Base Styles ---*/
+/*-------------------------------------------------*/
+.image-cover { background:  url(../images/site/bg-image-cover.png) left top repeat; width: 100%; position: absolute; left: 0; top: 0; }
+/*-------------------------------------------------*/
+a.base-button  { display: block; background: #0385d7; height: 40px; font-size: 18px; line-height: 40px; text-transform: uppercase; color: #fff; text-align: center; }
+a.base-button:hover { background: #0091ec; }
+/*-------------------------------------------------*/
+a.base-button.bb-small { font-size: 16px; }
+/*-------------------------------------------------*/
+a.base-button.orange-button { background: #ff4200; }
+a.base-button.orange-button:hover { background: #e51400; }  
+/*-------------------------------------------------*/
+a.base-button.bordered-button { background: none; border: 1px solid #fff; } 
+/*-------------------------------------------------*/
+/*--- Custom Fonts ---*/
+/*-------------------------------------------------*/
+.cs-headline h2 span { font-family: OpenSansRegular, Helvetica, Arial,sans-serif; }
+.main-menu ul li a, .landing-banner .landing-banner-content .lbc-box h2 span, a.base-button, .cs-headline h2, .news-list .news-description h3, .services-section .service-description h3, .copyright p span { font-family: OpenSansSemibold, Helvetica, Arial,sans-serif; } 
+/*-------------------------------------------------*/
+/*--- Non-Responsive Bootstrap ---*/
+/*-------------------------------------------------*/
+.container { width: 960px !important; } 
+/*-------------------------------------------------*/
+/*--- General Canvas Styles ---*/
+/*-------------------------------------------------*/
+#main {  }
+/*-------------------------------------------------*/
+/*--- General Header Styles ---*/
+/*-------------------------------------------------*/
+#header { background: #2b2b2b url(../images/bg_header.png) repeat-x left top; border-bottom: 5px solid #0385d7; width: 100%; z-index: 1000; } 
+#header h1 { padding: 13px 0 14px; }
+/*-------------------------------------------------*/
+/*--- General Header Menu Styles ---*/
+/*-------------------------------------------------*/
+.main-menu { float: right; }
+.main-menu ul li { float: left; }
+.main-menu ul li a { display: block; height: 80px; font-size: 14px; line-height: 80px; padding: 0 20px; color: #fff; text-decoration: none; text-transform: uppercase; }
+.main-menu ul li a:hover, .main-menu ul li.current-menu-item a:hover { background: #0091ec; }
+.main-menu ul li.current-menu-item a { background: #0385d7; }
+/*-------------------------------------------------*/
+/*--- General Landing Page Styles ---*/
+/*-------------------------------------------------*/
+.landing { }
+/*-------------------------------------------------*/
+/*--- Landing Page, Banner---*/
+/*-------------------------------------------------*/
+.landing-banner { overflow: hidden; height: 490px; border-bottom: 5px solid #0385d7; position: relative; }  
+.landing-banner .landing-banner-image { position: relative; text-align: center; }
+.landing-banner .landing-banner-image .image-cover { height: 490px; }
+.landing-banner .landing-banner-image img {  }
+.landing-banner .landing-banner-content { width: 100%; position: absolute; }
+.landing-banner .landing-banner-content .lbc-box { text-align: center; color: #2b2b2b; }
+.landing-banner .landing-banner-content .lbc-box h2 { text-transform: uppercase; font-size: 45px; line-height: 48px; padding: 22px 0 24px; border: 1px solid #fff; border-width: 1px 0; color: #fff; }
+.landing-banner .landing-banner-content .lbc-box h2 span { font-size: 50px; color: #2b2b2b; }
+.landing-banner .landing-banner-content .lbc-box p { font-size: 18px; line-height: 22px; padding: 25px 0; }
+.landing-banner .landing-banner-content .lbc-box a.base-button.bordered-button { width: 200px; margin: 0 auto; }
+/*-------------------------------------------------*/
+/*--- Landing Page, Content Sections ---*/
+/*-------------------------------------------------*/
+.content-section { padding: 95px 0; }
+.cs-headline { text-align: center; }
+.cs-headline h2 { padding: 0 0 20px 0; font-size: 36px; line-height: 36px; color: #2b2b2b; text-transform: uppercase; border-bottom: 1px solid #e9e9e9; }
+.cs-headline h2 span { color: #0385d7; }
+.cs-headline h2 a { display: inline-block; font-size: 14px; line-height: 16px; position: relative; top: -20px; text-transform: lowercase; color: #ff4200; }
+.cs-headline p { font-size: 18px; line-height: 22px; padding: 20px 0 0; }
+/*-------------------------------------------------*/
+.cs-headline.multicolor-headline h2 span { color: #fff; }
+.cs-headline.multicolor-headline h2 a { color: #2b2b2b; }
+.cs-headline.multicolor-headline p { color: #fff; padding: 20px 0 0; }
+/*-------------------------------------------------*/
+/*--- Landing Page, Services Section ---*/
+/*-------------------------------------------------*/
+.services-section { background:  url(../images/landing-services/services-banner.png) no-repeat fixed center center; }
+.services-section .cs-headline { padding: 0 0 48px; }
+.services-section aside { background: #0385d7; color: #fff; }
+/*-------------------------------------------------*/
+.services-section .service-image a { display: block; position: relative; }
+.services-section .service-image .service-cover { background: url(../images/landing-services/service-cover.png) no-repeat left top; position: absolute; width: 220px; height: 45px; bottom: 0; }
+/*-------------------------------------------------*/
+.services-section .service-description { text-align: center; padding: 0 15px; word-wrap: break-word; }
+.services-section .service-description h3 { padding: 8px 0; font-size: 20px; line-height: 24px; border-bottom: 1px solid #fff; }
+.services-section .service-description h3, .services-section .service-description h3 a { color: #fff; word-wrap: break-word; }
+.services-section .service-description p { padding: 15px 0; }
+/*-------------------------------------------------*/
+/*--- Landing Page, News Section ---*/
+/*-------------------------------------------------*/
+.news-section { }
+.news-list { margin: 0 0 -15px; padding: 45px 0 0; }
+.news-list>.row { padding: 0 0 20px;  }
+.news-list aside { background: #0385d7; text-align: center; }
+.news-list a.base-button.orange-button { margin: 0 0 0 -20px; }
+/*-------------------------------------------------*/
+.news-list .news-image a { display: block; position: relative; }
+/*-------------------------------------------------*/
+.news-list .news-description { padding: 15px 20px 0 0; color: #fff; }
+.news-list .news-description h3 { padding: 13px 0 10px; font-size: 20px; line-height: 24px; border-top: 1px solid #fff; text-transform: uppercase; }
+.news-list .news-description h3, .news-list .news-description h3 a { color: #fff; }
+.news-list .news-description p.news-date { padding: 0 0 12px; }
+/*-------------------------------------------------*/
+/*--- Landing Page, Contact Us Section ---*/
+/*-------------------------------------------------*/
+.contacts-section { background:  url(../images/landing-contacts/contacts-banner.png) no-repeat fixed top center; color: #fff; }
+.contacts-section .contact-us { padding: 47px 0 6px; font-size: 16px; line-height: 24px; }
+.contacts-section .location-map { border: 1px solid #fff; }
+.contacts-section .contact-information h3 { padding: 0 0 10px; font-size: 24px; line-height: 28px; border-bottom: 1px solid #fff; text-transform: uppercase; }
+.contacts-section .contact-information p { padding: 15px 0; }
+.contacts-section .contact-details { text-align: right; }
+.contacts-section .contact-details a { text-decoration: underline; color: #fff; }
+/*-------------------------------------------------*/                                                       
+/*--- General Static Page Styles ---*/
+/*-------------------------------------------------*/
+.static-page-content { padding: 50px 0; }
+/*-------------------------------------------------*/
+/*--- Static Page, Banner---*/
+/*-------------------------------------------------*/
+.page-banner { overflow: hidden; height: 400px; border-bottom: 5px solid #0385d7; position: relative; }  
+.page-banner .page-banner-image { position: relative; text-align: center; }
+.page-banner .page-banner-image .image-cover { height: 400px; }
+.page-banner .page-banner-image img {  }
+.page-banner .page-banner-content { width: 100%; position: absolute; }
+.page-banner .page-banner-content .pbc-box { text-align: center; color: #2b2b2b; }
+.page-banner .page-banner-content .pbc-box h2 { text-transform: uppercase; font-size: 45px; line-height: 48px; padding: 22px 0 24px; border: 1px solid #fff; border-width: 1px 0; color: #fff; }
+.page-banner .page-banner-content .pbc-box h2 span { color: #2b2b2b; }
+.page-banner .page-banner-content .pbc-box p { font-size: 18px; line-height: 22px; padding: 25px 0; }
+/*-------------------------------------------------*/                                                       
+/*--- Static Page, General Sidebar Styles ---*/
+/*-------------------------------------------------*/
+.sidebar-menu { }
+.sidebar-menu li { }
+.sidebar-menu li a { display: block; padding: 10px 15px; background: #0385d7; color: #fff; border-top: 1px solid #fff; }
+.sidebar-menu li a:hover, .sidebar-menu li.current-menu-item a { background: #0091ec; }
+/*-------------------------------------------------*/
+.sidebar-menu.orange-sidebar-menu li a { background: #ff4200; }
+.sidebar-menu.orange-sidebar-menu li a:hover, .sidebar-menu.orange-sidebar-menu li.current-cat a{ background: #e51400; }
+/*-------------------------------------------------*/                                                       
+/*--- General Static Page Content Styles ---*/
+/*-------------------------------------------------*/
+.sp-wrapper { padding: 0 0 0 20px; }
+.sp-wrapper .sp-headline { padding: 0 0 10px 0; font-size: 24px; line-height: 36px; color: #0385d7; text-transform: uppercase; border-bottom: 1px solid #e9e9e9; }
+.sp-wrapper .page-featured-image { padding: 25px 0 0; }
+.sp-wrapper .sp-content { padding: 15px 0; line-height: 18px; }
+.sp-wrapper .sp-content p { padding: 5px 0; }
+/*-------------------------------------------------*/                                                       
+/*--- News Listing Styles ---*/
+/*-------------------------------------------------*/
+.news-post-list { }
+.news-post-list article { padding: 20px 0 0; } 
+.news-post-list article:first-child { padding: 0; } 
+.news-post-list header, .news-post-list footer { padding: 10px 15px; color: #fff; } 
+.news-post-list header a, .news-post-list footer a { color: #fff; } 
+.news-post-list header { border-bottom: 1px solid #fff; background: #0385d7; }
+.news-post-list header h3 { font-size: 20px; line-height: 24px; text-transform: uppercase; }
+.news-post-list .news-content { padding: 15px 0; }
+.news-post-list footer { background: #98a3a3; }
+.news-post-list footer .news-date { text-align: right; }
+/*-------------------------------------------------*/                                                       
+/*--- Single News Page Styles ---*/
+/*-------------------------------------------------*/
+.news-single-post .news-image { padding: 25px 0 0; }
+.news-single-post .news-content { padding: 15px 0; line-height: 18px; }
+.news-single-post .news-content p { padding: 5px 0; }
+/*-------------------------------------------------*/                                
+/*--- Global Footer Styles ---*/
+/*-------------------------------------------------*/
+#footer { padding: 45px 0; background: #2b2b2b url(../images/bg_footer.png) repeat-x left top; border-top: 5px solid #0385d7; color: #fff; font-size: 12px; line-height: 16px; }
+/*-------------------------------------------------*/
+#footer .social-networks { height: 25px; margin: 0 -3px; padding: 7px 0 0; }
+#footer .social-networks li { float: left; padding: 0 2px; }
+#footer .social-networks li a { display: block; width: 25px; height: 25px; text-indent:-9999em; overflow: hidden; background:  url(../images/icons/ico-sn-footer.png) no-repeat left top; }
+/*-------------------------------------------------*/
+#footer .social-networks li.facebook a { background-position: left top; }
+#footer .social-networks li.twitter a { background-position: -25px top; }
+#footer .social-networks li.youtube a { background-position: -50px top; }
+#footer .social-networks li.instagram a { background-position: -75px top; }
+#footer .social-networks li.pinterest a { background-position: -100px top; }
+/*-------------------------------------------------*/
+#footer .social-networks li.facebook a:hover { background-position: left bottom; }
+#footer .social-networks li.twitter a:hover { background-position: -25px bottom; }
+#footer .social-networks li.youtube a:hover { background-position: -50px bottom; }
+#footer .social-networks li.instagram a:hover { background-position: -75px bottom; }
+#footer .social-networks li.pinterest a:hover { background-position: -100px bottom; }
+/*-------------------------------------------------*/
+#footer .copyright { text-align: right; padding: 5px 0 0; }
+#footer .copyright span { color: #0385d7; }
+/*-------------------------------------------------*/
+#footer .footer-info-menu li { display: inline; }
+#footer .footer-info-menu li a { color: #fff; }
+#footer .footer-info-menu li a:hover { text-decoration: underline; }
