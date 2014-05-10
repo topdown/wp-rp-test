@@ -54,9 +54,9 @@ Recommended image size :
 
 The headline is build up from 3 fields , but only the firs one is required (*)
 
-* *1st Word*
-* *2nd Word* 
-* *3rd Word*
+* 1st Word(*)
+* 2nd Word
+* 3rd Word
 
 **Banner Description :**
 
@@ -67,7 +67,7 @@ Banner Button :
 The banner buttons consisnts of 2 fields, both are optional.
 To display the button both should be filled.
 
-* *Button text - The content of the button*
-* *Button url - The URL where the user will be directed if he clicks the button, can be any url*
+* Button text - The content of the button
+* Button url - The URL where the user will be directed if he clicks the button, can be any url
 
 
