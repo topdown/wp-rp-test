@@ -39,9 +39,9 @@ Home page setup
 ------------
 The Home page is made of 4 customizable sections, each section requires some input from the admin in order to show a nice Home page.
 
-**Home page banner section :**
+*Home page banner section :*
 
-***Banner image:***
+**Banner image:**
 
 There is some recommended format for the image size , but even if you add a image that doesnt fit this recommendations the theme will auto resize the image keeping its proportions.
 
@@ -50,7 +50,7 @@ Recommended image size :
   width = 1920 px
   height = 490 px
 
-***Banner Headline :***
+**Banner Headline :**
 
 The headline is build up from 3 fields , but only the firs one is required (*)
 
@@ -58,7 +58,7 @@ The headline is build up from 3 fields , but only the firs one is required (*)
 2nd Word
 3rd Word 
 
-***Banner Description :***
+**Banner Description :**
 
 Here you can put some content in to your banner using a standard WYSIWYG editor
 
