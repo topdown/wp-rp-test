@@ -7,7 +7,6 @@
 require_once "inc/RP_Init.php";
 RP_Init::getInstance();
 
-
 /*  --------------------------------------------
     Register Navigation menu
     And to keep our template files nice and clean
@@ -42,7 +41,6 @@ function rp_top_nav_fallback(){
 		                <li class='current-menu-item'><a href='/'>Home</a></li>
 		            </ul>
                   </nav>";
-
 }
 function rp_footer_nav_fallback () {
     echo "<ul class='footer-info-menu'>
@@ -66,11 +64,13 @@ function register_rp_widgets() {
 }
 add_action( 'widgets_init', 'register_rp_widgets' );
 
-/*  --------------------------------------------
-    Again to keep clean and readable template files
-    the footer socials section and copyright
-    will be generated with this functions
-    ------------------------------------------- */
+
+/**
+ * Shows the social icons with links
+ * Receives data from Theme settings
+ *
+ * @return string The socials list
+ */
 
 function rp_footer_socials() {
     $socials = array(
@@ -89,8 +89,9 @@ function rp_footer_socials() {
             "https://www.pinterest.com/"
         )
     );
+
     $html = '<ul class="social-networks">';
-    for($i=0;$i<count($socials['names']);$i++){
+    for($i = 0; $i < count( $socials['names'] ); $i++) {
         $name = $socials['names'][$i];
         $link = $socials['links'][$i];
         $profile = get_option('rp_'.strtolower($name).'_profile');
@@ -98,14 +99,20 @@ function rp_footer_socials() {
         if($profile!=''){
             $html.= '<li class="'.strtolower($name).'"><a href="'.$link.$profile.'" title="Find Us on '.$name.'">'.$name.'</a></li>';
         }
-
     }
+
     $html.='</ul>';
     echo $html;
 }
-// Ths function outputs the category page banner
-function rp_get_cat_banner () {
 
+/**
+ *  Used in archive template file ,
+ *  to show the category banner
+ *
+ * @return string The category banner
+ */
+
+function rp_get_cat_banner () {
     if(is_category()) {
         global $cat;
         $category = "category_".$cat;
@@ -142,10 +149,14 @@ function rp_get_cat_banner () {
         }
     }
 }
-/*  --------------------------------------------
-    Here starts the customized homepage section
-    this functions are done to maintain a clean template structure.
-    -------------------------------------------- */
+
+/**
+ * Show the banner image , does a proportional resize
+ *
+ * @param int $maxHeight The maximum height of the Image
+ *
+ * @return string The img container , with attributes
+ */
 function rp_get_banner_image($maxHeight = 490) {
     if(get_field('banner_image')){
         $image = get_field('banner_image');
@@ -163,6 +174,7 @@ function rp_get_banner_image($maxHeight = 490) {
         echo '<img src="'.$url.'" alt="'.$alt.'" title="'.$title.'" height="'.$height.'" width="'.$width.'" />';
     }
 }
+
 function rp_get_banner_heading($fieldName="custom_page_title"){
     if(!is_home()){
         switch (get_field("banner_headline")){

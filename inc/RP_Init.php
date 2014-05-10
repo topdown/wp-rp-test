@@ -51,11 +51,11 @@ class RP_Init {
             }
         }
     }
+
     /**  ---------------------------------------------
             register scripts and styles
             Important : Maintain order !
         --------------------------------------------- */
-
     private function register_scripts () {
         add_action( 'wp_enqueue_scripts', 'rp_test_enqueue_scripts' );
 
@@ -77,7 +77,6 @@ class RP_Init {
         wp_customize for that , to have a nice and
         intuitive WP theme customization UI
         ------------------------------------------- */
-
     private function create_theme_options(){
         add_action( 'customize_register', 'rp_test_customize_register' );
 
@@ -152,7 +151,6 @@ class RP_Init {
         The thumbs will be generated each time an image gets uploaded.
         So changing this values doesn't affect already uploaded images
         -------------------------------------------- */
-
     private function add_image_size (){
         add_image_size( 'newsThumb', 220, 230, true);
         add_image_size( 'serviceThumb', 220, 150, true);
