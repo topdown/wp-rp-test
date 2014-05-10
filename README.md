@@ -38,4 +38,18 @@ In order to setupe the Frontpage go to pages->Home Page and fill out the forms.
 
 For more details about he Homepage setup visit our [wiki->Home Page setup](https://github.com/rubenCodeforges/wp-rp-test/wiki/Home-page-setup)
 
+You also should add some menu items , by default the theme displays only a "Home" menu item.
 
+Theme Customization
+------------
+
+The RP theme is well customized , there a lot of sections you can customize,
+The theme has also some theme settings
+
+Here is a small list :
+* Site title
+* Footer socials.
+* Navigation - supports 2 menus
+* Footer copyrights
+
+There are more things you can customize , please visit the [wiki](https://github.com/rubenCodeforges/wp-rp-test/wiki) for more details
