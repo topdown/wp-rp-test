@@ -31,41 +31,11 @@ Theme Setup
 After the theme is activated you have to setup the "Home page" and "Menu"
 Otherwise you will have a chunky frontPage and one menu item "Home"
 
-Now the theme after activation creates a page called "Home page " with the slug "rp_home".
-Then it sets a static page in the theme settings using this page.
-So you dont need to worry about creating pages and setting up the theme.
+The theme will create a page called "Home page" with slug "rp_home".
+This page will have all the fields needed to customize the Frontpage.
 
-Home page setup
-------------
-The Home page is made of 4 customizable sections, each section requires some input from the admin in order to show a nice Home page.
+In order to setupe the Frontpage go to pages->Home Page and fill out the forms.
 
-###Home page banner section :
-
-**Banner image:**
-
-There is some recommended format for the image size , but even if you add a image that doesnt fit this recommendations the theme will auto resize the image keeping its proportions.
-
-*Recommended image size :* 
-  * width = 1920 px
-  * height = 490 px
-
-**Banner Headline :**
-
-The headline is build up from 3 fields , but only the firs one is required (*)
-* 1st Word(*)
-* 2nd Word
-* 3rd Word
-
-**Banner Description :**
-
-Here you can put some content in to your banner using a standard WYSIWYG editor
-
-**Banner Button :**
-
-The banner buttons consisnts of 2 fields, both are optional.
-To display the button both should be filled.
-
-* Button text - The content of the button
-* Button url - The URL where the user will be directed if he clicks the button, can be any url
+For more details about he Homepage setup visit our [wiki->Home Page setup][https://github.com/rubenCodeforges/wp-rp-test/wiki/Home-page-setup]
 
 
