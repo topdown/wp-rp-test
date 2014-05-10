@@ -39,7 +39,7 @@ Home page setup
 ------------
 The Home page is made of 4 customizable sections, each section requires some input from the admin in order to show a nice Home page.
 
-*Home page banner section :*
+###Home page banner section :
 
 **Banner image:**
 
@@ -47,16 +47,16 @@ There is some recommended format for the image size , but even if you add a imag
 
 Recommended image size : 
 
-  width = 1920 px
-  height = 490 px
+  * width = 1920 px
+  * height = 490 px
 
 **Banner Headline :**
 
 The headline is build up from 3 fields , but only the firs one is required (*)
 
-1st Word (*) 
-2nd Word
-3rd Word 
+* *1st Word*
+* *2nd Word* 
+* *3rd Word*
 
 **Banner Description :**
 
@@ -67,7 +67,7 @@ Banner Button :
 The banner buttons consisnts of 2 fields, both are optional.
 To display the button both should be filled.
 
-Button text - The content of the button
-Button url - The URL where the user will be directed if he clicks the button, can be any url
+* *Button text - The content of the button*
+* *Button url - The URL where the user will be directed if he clicks the button, can be any url*
 
 
