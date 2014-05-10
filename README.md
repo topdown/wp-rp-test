@@ -54,6 +54,14 @@ Here is a small list :
 
 There are more things you can customize , please visit the [wiki](https://github.com/rubenCodeforges/wp-rp-test/wiki) for more details
 
+Theme specific widget
+------------
+
+The theme provides its custom widget.
+The widget is based on the standard Category widget, with some additions.
+
+RP Sidebar widget - Located in `Appearance -> widgets`
+
 Theme Vendors
 ------------
 
