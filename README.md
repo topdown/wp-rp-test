@@ -36,6 +36,6 @@ This page will have all the fields needed to customize the Frontpage.
 
 In order to setupe the Frontpage go to pages->Home Page and fill out the forms.
 
-For more details about he Homepage setup visit our [wiki->Home Page setup][https://github.com/rubenCodeforges/wp-rp-test/wiki/Home-page-setup]
+For more details about he Homepage setup visit our [wiki->Home Page setup](https://github.com/rubenCodeforges/wp-rp-test/wiki/Home-page-setup)
 
 
