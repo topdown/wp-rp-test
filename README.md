@@ -53,3 +53,12 @@ Here is a small list :
 * Footer copyrights
 
 There are more things you can customize , please visit the [wiki](https://github.com/rubenCodeforges/wp-rp-test/wiki) for more details
+
+Theme Vendors
+------------
+
+The theme has a heavy use of the ACF - plugin (Advanced Custom Field).
+And it has a copy of it , so if you dont have the plugin the theme will use the one in the box.
+If you have already have ACF the theme will use the one is installed.
+
+Version provided - ACF Version 4.3.7
