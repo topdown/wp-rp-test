@@ -5,21 +5,28 @@
                 <?php get_sidebar(); ?>
                 <div class="col-xs-9">
                     <section class="sp-wrapper">
-                        <header class="sp-headline">
-                            <h3>
-                                <?php if( function_exists("get_field") ){
-                                    the_field("page_headline");
-                                } else {
-                                    the_title();
-                                }?>
-                            </h3>
-                        </header>
-                        <div class="sp-content">
-                            <?php while(have_posts()) {
-                                the_post_thumbnail("blogImage");
-                                the_post();
-                                the_content();
-                            } ?>
+                        <div class="news-post-list">
+                            <?php while (have_posts()):the_post(); ?>
+                                <article>
+                                    <header>
+                                        <h3><a href="<?php the_permalink(); ?>" title="<?php the_title()?>"><?php the_title()?></a></h3>
+                                    </header>
+                                    <?php the_post_thumbnail("blogImage"); ?>
+                                    <div class="news-content">
+                                        <?php the_excerpt(); ?>
+                                    </div>
+                                    <footer>
+                                        <div class="row">
+                                            <div class="col-xs-9">
+                                                Categories: <?php the_category(' ') ?>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <p class="news-date"><?php echo get_the_date(); ?></p>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </article>
+                            <?php endwhile ;?>
                         </div>
                     </section>
                 </div>

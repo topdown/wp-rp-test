@@ -21,7 +21,12 @@
                 <div class="col-xs-9">
                     <section class="sp-wrapper">
                         <header class="sp-headline">
-                            <h3><?php if( function_exists("get_field") ) the_field("page_headline"); ?></h3>
+                            <h3><?php if( function_exists("get_field") ){
+                                    the_field("page_headline");
+                                } else {
+                                    the_title();
+                                }?>
+                            </h3>
                         </header>
                         <div class="sp-content">
                             <?php while(have_posts()) {
