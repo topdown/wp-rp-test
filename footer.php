@@ -3,7 +3,7 @@
                     <div class="row">
                         <div class="col-xs-5">
                             <div class="logo">
-                                <h1><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/site/logo-small.png" alt="Some Company Name" title="Some Company Name" height="35" width="195" /></a></h1>
+                                <h1><a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/site/logo-small.png" alt="<?php _e("Some Company Name","rp_test"); ?>" title="<?php _e("Some Company Name","rp_test"); ?>" height="35" width="195" /></a></h1>
                             </div>
                         </div>
                         <div class="col-xs-2">

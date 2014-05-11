@@ -14,12 +14,12 @@ RP_Init::getInstance();
     witch will echo the menu with proper args
     -------------------------------------------- */
 
-register_nav_menus(array(
-    'top-nav' => 'General Header Menu',
-    'footer-nav' => 'General Footer Menu'
+register_nav_menus( array(
+    'top-nav' => __( 'General Header Menu' , 'rp_test' ),
+    'footer-nav' => __( 'General Footer Menu' , 'rp_test' )
 ));
 
-function rp_get_nav_menu($location ,$container,$container_class = '',$menuClass='menu',$menu='',$echo = true) {
+function rp_get_nav_menu( $location , $container, $container_class = '', $menuClass='menu', $menu='', $echo = true) {
     $fallback = $location == "top-nav" ? "rp_top_nav_fallback" : "rp_footer_nav_fallback";
     $args = array(
         'theme_location'  => $location,
@@ -116,7 +116,7 @@ function rp_get_cat_banner () {
     if(is_category()) {
         global $cat;
         $category = "category_".$cat;
-        if(get_field('cat_banner_image', $category)){
+        if( function_exists('get_field') && get_field('cat_banner_image', $category) ){
             $image = get_field('cat_banner_image', $category);
             $height = $image['height'];
             $width = $image['width'];
@@ -157,36 +157,38 @@ function rp_get_cat_banner () {
  *
  * @return string The img container , with attributes
  */
-function rp_get_banner_image($maxHeight = 490) {
-    if(function_exists("get_field")){
-        $image = get_field('banner_image');
-        $height = $image['height'];
-        $width = $image['width'];
-        $url = $image['url'];
-        $alt = $image['alt'];
-        $title = $image['title'];
-        $ratio = $width/$height;
-        // if height is more then $maxHeight - resize
-        if($height > $maxHeight){
-            $height = $maxHeight;
-            $width = $height*$ratio;
+function rp_get_banner_image( $maxHeight = 490 ) {
+    if( function_exists("get_field") ){
+        if(get_field('banner_image')){
+            $image = get_field('banner_image');
+            $height = $image['height'];
+            $width = $image['width'];
+            $url = $image['url'];
+            $alt = $image['alt'];
+            $title = $image['title'];
+            $ratio = $width/$height;
+            // if height is more then $maxHeight - resize
+            if($height > $maxHeight){
+                $height = $maxHeight;
+                $width = $height*$ratio;
+            }
+            echo '<img src="'.$url.'" alt="'.$alt.'" title="'.$title.'" height="'.$height.'" width="'.$width.'" />';
         }
-        echo '<img src="'.$url.'" alt="'.$alt.'" title="'.$title.'" height="'.$height.'" width="'.$width.'" />';
     }
 }
 
-function rp_get_banner_heading($fieldName="custom_page_title"){
-    if(function_exists("get_field")){
-        if(!is_home()){
-            switch (get_field("banner_headline")){
+function rp_get_banner_heading( $fieldName = "custom_page_title" ){
+    if( function_exists("get_field") && get_field("banner_headline") ){
+        if( !is_home() ){
+            switch ( get_field( "banner_headline" ) ){
                 case 1 : the_title() ; break;
-                case 2 : echo get_field($fieldName) ; break;
+                case 2 : echo get_field( $fieldName ) ; break;
             }
         }
     }
 }
 function rp_get_home_banner_heading() {
-    if(is_front_page() && function_exists("get_field")){
+    if( is_front_page() && function_exists("get_field") && get_field('banner_word1') ){
         $word1 = get_field('banner_word1');
         $word2 = get_field('banner_word2') ? "<span>".get_field('banner_word2')."</span>" : "";
         $word3 = get_field('banner_word3');
@@ -194,14 +196,14 @@ function rp_get_home_banner_heading() {
     }
 }
 function rp_get_home_banner_button($btnClass = "") {
-    if(is_front_page() && function_exists("get_field")){
+    if( is_front_page() && function_exists("get_field") ){
         if(get_field('banner_btn_text') && get_field('banner_btn_url')) {
             echo '<a href="'.get_field('banner_btn_url').'" class="'.$btnClass.'" title="'.get_field('banner_btn_text').'">'.get_field('banner_btn_text').'</a>';
         }
     }
 }
 function rp_get_about_section($header_class = "") {
-    if( is_front_page() && function_exists("get_field") ){
+    if( is_front_page() && function_exists("get_field") && get_field('about_word1') ){
         $headline = '<h2>'.get_field('about_word1');
         $headline.= get_field('about_word2') ? ' <span>'.get_field('about_word2').'</span> ' : '';
 
@@ -232,7 +234,7 @@ function rp_get_about_section($header_class = "") {
  */
 
 function rp_get_service_section ($args = array()) {
-    if(function_exists("get_field")) {
+    if( function_exists("get_field") && get_field('services_word1')) {
         $defaults = empty($args) ?
             array(
                 "headerClass" => "cs-headline multicolor-headline",
@@ -297,7 +299,7 @@ function rp_get_service_section ($args = array()) {
  */
 
 function rp_get_news_section($args  = array()) {
-    if(function_exists("get_field")) {
+    if( function_exists("get_field") && get_field('cnews_word1') ) {
         $defaults = empty($args) ?
             array(
                 "headerClass" => "cs-headline",

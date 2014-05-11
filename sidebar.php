@@ -1,6 +1,6 @@
 <div class="col-xs-3 sidebar">
-    <aside class="widget">
-        <?php if ( dynamic_sidebar('sidebar-left') ) : else : endif; ?>
-    </aside>
+        <?php if ( is_active_sidebar( 'sidebar-left' ) ) : ?>
+            <?php ( dynamic_sidebar('sidebar-left') ) ?>
+        <?php endif; ?>
 </div>
 <?php

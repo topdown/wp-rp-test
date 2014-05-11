@@ -36,9 +36,10 @@ class RP_Sidebar_menu extends WP_Widget {
         $d = ! empty( $instance['dropdown'] ) ? '1' : '0';
 
         // The first widget Part ?>
-        <ul class="sidebar-menu">
-            <?php echo $children; ?>
-        </ul>
+        <aside class="widget">
+            <ul class="sidebar-menu">
+                <?php echo $children; ?>
+            </ul>
 
         <?php
         $cat_args = array('orderby' => 'name', 'show_count' => $c, 'hierarchical' => $h);
@@ -68,7 +69,7 @@ class RP_Sidebar_menu extends WP_Widget {
                 wp_list_categories( apply_filters( 'widget_categories_args', $cat_args ) );
                 ?>
             </ul>
-
+            </aside>
         <?php
         }
     }

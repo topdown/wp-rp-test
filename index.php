@@ -18,7 +18,7 @@
                                     <footer>
                                         <div class="row">
                                             <div class="col-xs-9">
-                                                Categories: <?php the_category(' ') ?>
+                                                <?php _e("Categories: ","rp_test"); ?> <?php the_category(' ') ?>
                                             </div>
                                             <div class="col-xs-3">
                                                 <p class="news-date"><?php echo get_the_date(); ?></p>
