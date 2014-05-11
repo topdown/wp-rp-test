@@ -1,6 +1,6 @@
 <?php
 /** The init class for rp_test Theme */
-
+require_once dirname( __FILE__ ) ."/TGM_Installer.php";
 class RP_Init {
     protected static $_instance;
 
@@ -9,10 +9,10 @@ class RP_Init {
         $this->create_theme_options();
         $this->apply_filters();
         $this->add_image_size();
-        if( !class_exists('acf') ) {
-            include_once 'plugins/advanced-custom-fields/acf.php';
-        }
         $this->on_activation();
+        if( !class_exists('acf') ) {
+            $this->install_acf();
+        }
     }
     private function __clone() {}
 
@@ -113,7 +113,7 @@ class RP_Init {
             }
 
             // Same as in socials but for copyright
-            for($i=0;$i<count($copyright);$i++){
+            for($i = 0; $i < count( $copyright ); $i++){
 
                 $wp_customize->add_setting( 'rp_copyright_'.($i+1), array(
                         'default'        => '',
@@ -127,9 +127,11 @@ class RP_Init {
             }
         }
     }
-
+    // Here we apply some filters as well as some actions
     private function apply_filters(){
         add_filter( 'wp_title', 'rp_test_title' );
+        add_action( 'wp_head', 'add_favicon' );
+        add_filter( 'excerpt_more', 'rp_excerpt_more' );
 
         function rp_test_title( $title ) {
             if( empty( $title ) && ( is_home() || is_front_page() ) ) {
@@ -137,10 +139,15 @@ class RP_Init {
             }
             return $title;
         }
+
         function rp_excerpt_more( $more ) {
             return '... <a href="'.get_permalink().'" title="read more"> Read more</a>';
         }
-        add_filter('excerpt_more', 'rp_excerpt_more');
+
+        function add_favicon () {
+            echo '<link rel="shortcut icon" href="'.get_stylesheet_directory_uri().'/images/favicon.ico"  type="image/x-icon" />';
+        }
+
     }
 
     /**  --------------------------------------------
@@ -158,10 +165,10 @@ class RP_Init {
         add_theme_support( 'post-thumbnails' );
         add_image_size( 'blogImage', 695, 300, true);
     }
-    public function rp_page_exists ($page_slug) {
+    public function rp_page_exists ( $page_slug ) {
         $pages = get_pages();
         foreach ($pages as $page) {
-            if($page->post_name == $page_slug) {
+            if( $page->post_name == $page_slug ) {
                 return true;
             }
         }
@@ -175,17 +182,39 @@ class RP_Init {
      *
      * @return int|\WP_Error The page id
      */
-    public function rp_insert_home_page ($pageTitle="Home page") {
+    public function rp_insert_home_page ( $pageTitle="Home page" ) {
         $defaults = array(
             'post_status'           => 'publish',
             'post_type'             => 'page',
             'post_name'             => 'rp_home',
             'post_title'            => $pageTitle
         );
-        $postID = wp_insert_post($defaults);
-        update_option( 'page_on_front',$postID );
+        $postID = wp_insert_post( $defaults );
+        update_option( 'page_on_front', $postID );
         update_option( 'show_on_front', 'page' );
         return $postID;
+    }
+    /**
+     * This is the installer for plugins. For now it installs required ACF
+     *
+     * @return void
+     */
+    private function install_acf () {
+        add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+        function my_theme_register_required_plugins() {
+            $plugins = array(
+                // This is an example of how to include a plugin from the WordPress Plugin Repository.
+                array(
+                    'name'      => 'Advanced Custom Fields',
+                    'slug'      => 'advanced-custom-fields',
+                    'required'  => true,
+                ),
+            );
+            tgmpa( $plugins, array(
+                'is_automatic' => true,
+                'dismissable'  => false,
+            ) );
+        }
     }
 
 } 
