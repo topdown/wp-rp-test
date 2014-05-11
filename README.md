@@ -64,9 +64,9 @@ RP Sidebar widget - Located in `Appearance -> widgets`
 
 Theme Vendors
 ------------
+The theme has a heavy use of the `ACF - plugin` (Advanced Custom Field).
+If you dont have this plugin , the theme will promt you to install it.
 
-The theme has a heavy use of the ACF - plugin (Advanced Custom Field).
-And it has a copy of it , so if you dont have the plugin the theme will use the one in the box.
-If you have already have ACF the theme will use the one is installed.
+Fore more information about this plugin got to [ACF Website](http://www.advancedcustomfields.com/)
 
-Version provided - ACF Version 4.3.7
+The Theme uses the `TGM-Plugin-Activation` Class , author Thomas Griffin [Git Hub Link](https://github.com/thomasgriffin/TGM-Plugin-Activation)
