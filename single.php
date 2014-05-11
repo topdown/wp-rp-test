@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="pbc-box">
                     <h2><?php rp_get_banner_heading("banner_custom_title"); ?></h2>
-                    <?php the_field('banner_description'); ?>
+                    <?php if( function_exists("get_field") ) the_field('banner_description'); ?>
                 </div>
             </div>
         </div>

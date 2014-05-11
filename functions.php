@@ -158,7 +158,7 @@ function rp_get_cat_banner () {
  * @return string The img container , with attributes
  */
 function rp_get_banner_image($maxHeight = 490) {
-    if(get_field('banner_image')){
+    if(function_exists("get_field")){
         $image = get_field('banner_image');
         $height = $image['height'];
         $width = $image['width'];
@@ -176,15 +176,17 @@ function rp_get_banner_image($maxHeight = 490) {
 }
 
 function rp_get_banner_heading($fieldName="custom_page_title"){
-    if(!is_home()){
-        switch (get_field("banner_headline")){
-            case 1 : the_title() ; break;
-            case 2 : echo get_field($fieldName) ; break;
+    if(function_exists("get_field")){
+        if(!is_home()){
+            switch (get_field("banner_headline")){
+                case 1 : the_title() ; break;
+                case 2 : echo get_field($fieldName) ; break;
+            }
         }
     }
 }
 function rp_get_home_banner_heading() {
-    if(is_front_page()){
+    if(is_front_page() && function_exists("get_field")){
         $word1 = get_field('banner_word1');
         $word2 = get_field('banner_word2') ? "<span>".get_field('banner_word2')."</span>" : "";
         $word3 = get_field('banner_word3');
@@ -192,12 +194,14 @@ function rp_get_home_banner_heading() {
     }
 }
 function rp_get_home_banner_button($btnClass = "") {
-    if(is_front_page() && get_field('banner_btn_text') && get_field('banner_btn_url')){
-        echo '<a href="'.get_field('banner_btn_url').'" class="'.$btnClass.'" title="'.get_field('banner_btn_text').'">'.get_field('banner_btn_text').'</a>';
+    if(is_front_page() && function_exists("get_field")){
+        if(get_field('banner_btn_text') && get_field('banner_btn_url')) {
+            echo '<a href="'.get_field('banner_btn_url').'" class="'.$btnClass.'" title="'.get_field('banner_btn_text').'">'.get_field('banner_btn_text').'</a>';
+        }
     }
 }
 function rp_get_about_section($header_class = "") {
-    if(is_front_page()&&get_field('about_word1')){
+    if( is_front_page() && function_exists("get_field") ){
         $headline = '<h2>'.get_field('about_word1');
         $headline.= get_field('about_word2') ? ' <span>'.get_field('about_word2').'</span> ' : '';
 
@@ -228,7 +232,7 @@ function rp_get_about_section($header_class = "") {
  */
 
 function rp_get_service_section ($args = array()) {
-    if(get_field("services_word1")) {
+    if(function_exists("get_field")) {
         $defaults = empty($args) ?
             array(
                 "headerClass" => "cs-headline multicolor-headline",
@@ -293,7 +297,7 @@ function rp_get_service_section ($args = array()) {
  */
 
 function rp_get_news_section($args  = array()) {
-    if(get_field("cnews_word1")) {
+    if(function_exists("get_field")) {
         $defaults = empty($args) ?
             array(
                 "headerClass" => "cs-headline",
@@ -378,7 +382,7 @@ function rp_get_news_section($args  = array()) {
  */
 
 function rp_get_contacts_section($args = array()){
-    if(get_field("contacts_word1")){
+    if(function_exists("get_field")){
         $defaults = empty($args) ? array(
             'headerClass' => 'cs-headline multicolor-headline',
             'contactsContainerClass' => 'contact-us',

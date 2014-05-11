@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="pbc-box">
                     <h2><?php rp_get_banner_heading(); ?></h2>
-                    <?php the_field('banner_description'); ?>
+                    <?php if( function_exists("get_field") ) the_field('banner_description'); ?>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <div class="col-xs-9">
                     <section class="sp-wrapper">
                         <header class="sp-headline">
-                            <h3><?php the_field("page_headline"); ?></h3>
+                            <h3><?php if( function_exists("get_field") ) the_field("page_headline"); ?></h3>
                         </header>
                         <div class="sp-content">
                             <?php while(have_posts()) {

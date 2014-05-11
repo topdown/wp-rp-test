@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="lbc-box">
                     <?php rp_get_home_banner_heading(); ?>
-                    <?php the_field('banner_description'); ?>
+                    <?php if( function_exists("get_field") ) the_field('banner_description'); ?>
                     <?php rp_get_home_banner_button('base-button bb-small bordered-button'); ?>
                 </div>
             </div>
