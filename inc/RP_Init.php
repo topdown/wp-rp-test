@@ -62,6 +62,8 @@ class RP_Init {
         function rp_test_enqueue_scripts() {
             wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css' );
             wp_enqueue_style( 'rp_style', get_template_directory_uri() . '/css/style.css' );
+            // Wp has a build in jquery , but to use the markup version , we deregister the wp script and enque out version
+            wp_deregister_script('jquery');
             wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/js/jquery-1.11.0.min.js',array(),'1.11');
             wp_enqueue_script( 'jq_sticky', get_template_directory_uri() . '/js/jquery.sticky.js');
             wp_enqueue_script( 'rp_test_main', get_template_directory_uri() . '/js/main.js');
@@ -83,7 +85,7 @@ class RP_Init {
         function rp_test_customize_register( $wp_customize ) {
 
             $socials = array( "Facebook", "Twitter", "YouTube", "Instagram", "Pinterest" );
-            $copyright = array( "1st part", "2nd part", "3rd part" );
+            $copyright = array( __("1st part","rp_test"), __( "2nd part", "rp_test" ), __( "3rd part","rp_test" ) );
 
             // Create the social section
             $wp_customize->add_section( 'social_networks', array(
@@ -106,7 +108,7 @@ class RP_Init {
                     ) );
 
                 $wp_customize->add_control( 'rp_'.strtolower($socials[$i]).'_profile', array(
-                        'label'      => $socials[$i].' - User profile',
+                        'label'      => $socials[$i].' - '.__("User profile","rp_test"),
                         'section'    => 'social_networks',
                         'settings'   => 'rp_'.strtolower($socials[$i]).'_profile'
                     ) );
@@ -141,7 +143,7 @@ class RP_Init {
         }
 
         function rp_excerpt_more( $more ) {
-            return '... <a href="'.get_permalink().'" title="read more"> Read more</a>';
+            return '... <a href="'.get_permalink().'" title="'.__("read more","rp_test").'"> '.__("Read more","rp_test").'</a>';
         }
 
         function add_favicon () {
